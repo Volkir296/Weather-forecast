@@ -5,6 +5,8 @@ using WebLabApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IWForecastRepository, WForecastRepository>();
+builder.Services.AddControllers();
+builder.Services.AddHostedService<BackgroundWorkerService>();
 
 // получаем строку подключения из файла конфигурации
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
