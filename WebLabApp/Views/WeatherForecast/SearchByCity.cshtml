@@ -1,0 +1,20 @@
+﻿@model WebLabApp.Models.SearchByCity
+
+@{
+	ViewData["Title"] = "Прогноз для города";
+}
+
+<div class="container">
+	<form method="post">
+		<div class="container">
+			<h2>Введите название города</h2>
+			<div>
+				<input asp-for="CityName" class="form-control" placeholder="Введите название города..." />
+				<button asp-controller="WeatherForecast" asp-action="SearchByCity" class="button prim">
+					Найти
+				</button>
+				<span asp-validation-for="CityName" class="text dang"></span>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,36 @@
+﻿@model WebLabApp.Models.City
+
+@{
+	ViewData["Title"] = "City";
+}
+
+<div class="container">
+	<div class="container">
+		<div class="from-group">
+			<h2>Прогноз погоды в выбранном городе</h2>
+
+			<label asp-for="Name"></label>
+			<span class="badge alert-primary">@Model.Name</span> <br />
+			
+			<label asp-for="Temperature"></label>
+			<span class="badge alert-primary">@Model.Temperature°</span> <br />
+
+			<label asp-for="Humidity"></label>
+			<span class="badge alert-primary">@Model.Humidity</span> <br />
+
+			<label asp-for="Pressure"></label>
+			<span class="badge alert-primary">@Model.Pressure Hpa</span> <br />
+
+			<label asp-for="Wind"></label>
+			<span class="badge alert-primary">@Model.Wind</span> <br />
+
+			<label asp-for="Weather"></label>
+			<span class="badge alert-primary">@Model.Weather</span> <br />
+
+			<form method="get">
+				<button asp-controller="WeatherForecast" asp-action="SearchByCity" class="button-primary">Вернуться</button>
+			</form>
+
+		</div>
+	</div>
+</div>

@@ -1,8 +1,10 @@
 using WebLabApp.Controllers;
 using WebLabApp.Models;
 using Microsoft.EntityFrameworkCore;
+using WebLabApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<IWForecastRepository, WForecastRepository>();
 
 // получаем строку подключения из файла конфигурации
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -15,6 +17,8 @@ builder.Services.AddControllersWithViews(); //сервисы фреймворка MVC, которые по
 var app = builder.Build();
 app.UseHttpsRedirection(); // переадресация
 app.UseStaticFiles(); // подключение статических файлов wwwroot
+app.UseRouting(); // включение маршрутизации запросов
+app.UseAuthorization(); // включение авторизации
 
 app.MapControllerRoute(
     name: "default",
