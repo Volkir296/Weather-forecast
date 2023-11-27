@@ -1,0 +1,29 @@
+﻿@model WebLabApp.Models.User;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+<h2>Добавление пользователя</h2>
+<form asp-action="create" asp-controller="user">
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Surname">Фамилию</label><br />
+        <input type="tel" asp-for="Surname" />
+    </p>
+    <p>
+        <label asp-for="Age">Возраст</label><br />
+        <input type="number" asp-for="Age" />
+    </p>
+    <p>
+        <label asp-for="Email">Email</label><br />
+        <input type="text" asp-for="Email" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>
